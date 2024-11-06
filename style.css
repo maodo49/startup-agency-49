@@ -51,8 +51,8 @@ body {
     z-index: 1;
     background-color: transparent;
     padding: 25px 0;
-    width: 100%; /* Assure que le header prenne la largeur complète avant le scroll */
-    transition: all 0.3s ease; /* Transition douce pour le changement de position */
+    width: 100%;
+    transition: all 0.3s ease;
 }
 
 .site-header.sticky {
@@ -96,14 +96,16 @@ ul {
 .logo {
     margin: 0;
     padding: 0;
-    max-width: 100%;
     min-width: 0;
+    width: 186px;
+    aspect-ratio: auto 186 / 37;
 }
 
 
 .logo-link {
     margin : 0 0 0.313rem 0;
     padding: 0 1.875rem 0 0;
+    max-width: 100%;
 }
 
 .navbar {
@@ -132,6 +134,7 @@ header nav a {
 header nav a:hover,
 nav a.active {
     color: var(--color2);
+    font-weight: bolder;
 }
 
 header nav a:last-child {
@@ -394,8 +397,8 @@ section div.container{
 }
 
 /* section services */
-#services {
-    padding: 5rem 0 0 0;
+#services{
+    margin-top: -30px;
 }
 
 .services .container {
@@ -403,7 +406,6 @@ section div.container{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 5rem 0 0 0;
     margin: 0 auto;
 }
 
@@ -420,10 +422,12 @@ section div.container{
 }
 
 .services .container-description h2 {
-    font-size: 2rem;
+    /* font-size: 2rem; */
     color: #0F2137;
-    line-height: 1.24;
-    letter-spacing: -1px;
+    /* line-height: 1.24; */
+    /* letter-spacing: -1px; */
+    font-size: 32px;
+    line-height: 1.83;
 }
 
 .card-services {
@@ -500,7 +504,7 @@ section div.container{
     flex-direction: row;
     justify-content: center;
     margin: 0 auto;
-    margin-top: 7.5rem;
+    margin-top: 8.5rem;
     max-width: 1230px;
     padding: 0 30px;
 }
@@ -520,19 +524,24 @@ section div.container{
     margin-left: auto;
     margin-right: auto;
     top: -45px;
+    max-height: 645px;
+}
+.boost-img img{
+    max-height: 645px;
+    object-fit: contain;
 }
 
 .boost-description {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 6.25rem 0 0 2rem;
+    padding: 3.25rem 0 0 2rem;
     text-align: left;
     flex: 1;
 }
 
 .boost-description h3 {
-    font-size: 36px;
+    font-size: 33px;
     margin: 0;
     padding: 0;
     color: var(--color3);
@@ -585,7 +594,7 @@ section div.container{
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    margin-top: 7.5rem;
+    margin-top: 3.5rem;
     padding: 0 30px;
     max-width: 1230px;
     width: 100%;
@@ -636,7 +645,6 @@ section div.container{
     aspect-ratio: 1110/626;
     height: auto;
     margin-top: 25px;
-    /* border: 2px solid red; */
     background-image: url('aset/video.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -672,22 +680,15 @@ section div.container{
 /* Modal container */
 .modal {
     display: none;
-    /* Hidden by default */
     position: fixed;
-    /* Stay in place */
     z-index: 100;
-    /* Sit on top */
     left: 0;
     top: 0;
     width: 100%;
-    /* Full width */
     height: 100%;
-    /* Full height */
-
-    background-color: transparent;
-    /* Black with opacity */
     justify-content: center;
     align-items: center;
+    background-color: #343d486b;
 }
 
 /* Modal content */
@@ -696,19 +697,21 @@ section div.container{
     background-color: transparent;
     margin: auto;
     padding: 0px;
-    width: 80%;
-    max-width: 600px;
+    width: 940px;
+    aspect-ratio: 940/529;
     text-align: center;
 }
 
 /* Close button */
 .close {
     position: absolute;
-    top: -20px;
-    right: -20px;
-    color: red;
+    z-index: 2;
+    top: -45px;
+    right: -45px;
+    color: rgb(255, 255, 255);
+    width: 40px;
+    height: 40px;
     font-size: 50px;
-    font-weight: bold;
     cursor: pointer;
 }
 
@@ -912,7 +915,7 @@ div.person.person5 {
 #testimonials .free-customer div.container-text {
     box-sizing: border-box;
     text-align: left;
-    padding-top: 210px;
+    padding-top: 110px;
     padding-right: 75px;
     padding-bottom: 10px;
     max-width: 100%;
@@ -921,7 +924,7 @@ div.person.person5 {
 }
 
 #testimonials .free-customer div.container-text h3 {
-    font-size: 2rem;
+    font-size: 2.1rem;
     font-weight: 700;
     line-height: 1.25;
     letter-spacing: -0.5px;
@@ -948,7 +951,7 @@ div.person.person5 {
 
 #testimonials .free-customer div.container-text p.last-p {
     opacity: 0.6;
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
 }
 
 #testimonials .free-customer-img {
@@ -965,6 +968,8 @@ div.person.person5 {
     margin: 0;
     padding: 0;
     height: auto;
+    width: 625px;
+    aspect-ratio: auto 625 / 719;
 }
 
 /* Section News */
@@ -1012,11 +1017,15 @@ div.person.person5 {
 
 .tutorials {
     position: relative;
-    width: 100%;
+    max-width: 1230px;
     height: 100%;
     /* z-index: 1; */
+    gap: 1rem;
+    
     display: flex;
     box-sizing: content-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     transform: translate3d(0px, 0px, 0px);
     transition-property: transform;
 }
@@ -1026,8 +1035,9 @@ div.person.person5 {
     flex-shrink: 0;
     height: auto;
     padding: 0;
-    width: 360.667px;
-    margin-right: 30px;
+    width: 380.667px;
+    /* margin-right: 35px; */
+        border: 0.1px solid #837d7d;
 }
 
 .tutorial3 {
@@ -1273,6 +1283,7 @@ footer div.footer-links a:hover {
 
 /* Responsive */
 
+/* inférieure ou égale à 1200px. */
 @media screen and (max-width: 1200px) {
     #home {
         padding: 150px 0 60px;
@@ -1511,6 +1522,7 @@ footer div.footer-links a:hover {
 
 }
 
+/* la largeur est inférieure ou égale à 992 pixels */
 @media (max-width: 992px) {
 
     button.register {
@@ -1731,7 +1743,7 @@ footer div.footer-links a:hover {
     }
 
     #testimonials .free-customer-img img {
-        max-width: 60%;
+        /* max-width: 60%; */
         margin-left: auto;
         margin-right: auto;
         display: block;
@@ -1739,6 +1751,19 @@ footer div.footer-links a:hover {
 
     #testimonials .free-customer div.container {
         grid-template-columns: 1fr;
+    }
+
+    .tutorials{
+        grid-template-columns: 2fr;
+        gap: 10px;
+    }
+
+    .tutorial1, .tutorial2, .tutorial3 {
+        /* width: 100%; */
+        
+        width: 49.5%;
+        margin: 0;
+        padding: 0;
     }
 
     footer div.footer-links {
@@ -1752,12 +1777,14 @@ footer div.footer-links a:hover {
     
 }
 
+/* largeur est exactement de 960 pixels. */
 @media screen and (width: 960px) {
     .nav-links {
         display: none;
     }
 }
 
+/* largeur est inférieure ou égale à 960 pixels. */
 @media screen and (max-width: 960px) {
 
     .nav-links {
@@ -1796,6 +1823,7 @@ footer div.footer-links a:hover {
     }
 }
 
+/*  largeur est inférieure ou égale à 768 pixels */
 @media screen and (max-width: 768px) {
 
     /*HEADER*/
@@ -1974,7 +2002,8 @@ footer div.footer-links a:hover {
     }
 
     #testimonials .free-customer-img img {
-        max-width: 625px;
+        /* width: 625px; */
+        width: 100%;
         height: auto;
         min-width: 0;
         margin: 0;
@@ -1989,9 +2018,13 @@ footer div.footer-links a:hover {
     .carousel {
         padding: 0 15px;
     }
+    .tutorials{
+        grid-template-columns: 1fr;
+        gap: 0px;
+    }
 
     .tutorial1, .tutorial2, .tutorial3 {
-        width: 95.964vw;
+        width: 100%;
         margin: 0;
         padding: 0;
     }
@@ -2020,6 +2053,7 @@ footer div.footer-links a:hover {
     }
 }
 
+/* la largeur est inférieure ou égale à 575 pixels */
 @media screen and (max-width: 575px) {
 
     .hero {

@@ -16,7 +16,7 @@ window.addEventListener("scroll", function () {
 
 //Gestion de l'affichage et du clic sur le menu avec ajout ou suppression de la classe "menu-hamburger"
 document.addEventListener("DOMContentLoaded", () => {
-    // document.body.style.overflow = 'hidden';
+  // document.body.style.overflow = 'hidden';
   const menuIcon = document.querySelector(".menu-icon");
   const menu = document.querySelector(".navbar");
   const closeIcon = document.querySelector(".icon-close-menu");
@@ -24,43 +24,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   divOpacity.addEventListener('click', () => {
-      divOpacity.style.display = 'none';
-      closeIcon.style.display = 'none';
-      document.querySelector('.logo-menu').style.display = 'none';
-      menu.classList.replace('menu-hamburger','navbar');
+    divOpacity.style.display = 'none';
+    closeIcon.style.display = 'none';
+    document.querySelector('.logo-menu').style.display = 'none';
+    menu.classList.replace('menu-hamburger', 'navbar');
   })
 
   if (menuIcon) {
     menuIcon.addEventListener('click', () => {
-        divOpacity.style.display = 'flex';
-        divOpacity.style.overflow = '-moz-hidden-unscrollable';
-        closeIcon.style.display = 'flex';
-        document.querySelector('.logo-menu').style.display = 'flex';
-        menu.classList.replace('navbar','menu-hamburger');
-        
+      divOpacity.style.display = 'flex';
+      divOpacity.style.overflow = '-moz-hidden-unscrollable';
+      closeIcon.style.display = 'flex';
+      document.querySelector('.logo-menu').style.display = 'flex';
+      menu.classList.replace('navbar', 'menu-hamburger');
+
     });
 
     closeIcon.addEventListener('click', () => {
-            console.log('Close icon clicked!');
-            menu.style.display = 'flex';
-            closeIcon.style.display = 'none';
-            divOpacity.style.display = 'none';
-            document.querySelector('.logo-menu').style.display = 'none';
-            menu.classList.replace('menu-hamburger','navbar');
+      console.log('Close icon clicked!');
+      menu.style.display = 'flex';
+      closeIcon.style.display = 'none';
+      divOpacity.style.display = 'none';
+      document.querySelector('.logo-menu').style.display = 'none';
+      menu.classList.replace('menu-hamburger', 'navbar');
     });
 
     if (menu.classList === 'menu-hamburger' || menu.classList === 'navbar') {
-        if(window.innerWidth > 960) {
-            menuIcon.style.display = 'none';
-            menu.classList.add('navbar');
-            menu.style.display = 'flex';
-        }
+      if (window.innerWidth > 960) {
+        menuIcon.style.display = 'none';
+        menu.classList.add('navbar');
+        menu.style.display = 'flex';
+      }
     }
-    
 
-} else {
+
+  } else {
     console.error('Menu icon not found');
-}
+  }
 
   let sections = document.querySelectorAll("section");
   let navLinks = document.querySelectorAll(".site-header nav a");
@@ -160,46 +160,46 @@ let divs = document.querySelectorAll(".customer-persons div.person");//contient 
 
 
 function adjustDivWidths() {
-    let tailleConteneur = 0;
-    let personWidth = 0;
-    
-    if (window.innerWidth >= 992) {
-      // Cas pour les écrans larges
-      tailleConteneur = window.innerWidth - 180;
-      personWidth = persons[0].offsetWidth + 60; // Ajuste la largeur avec la marge droite
-      divs.forEach((div) => {
-        div.style.width = "233.333px"; // Largeur définie pour ce cas
-      });
-    } else if (window.innerWidth >= 880) {
-      // Cas pour les écrans moyens // Ajuste la largeur avec la marge droite
-      divs.forEach((div) => {
-        div.style.width = "253.333px"; // Largeur définie pour ce cas
-      });
-    } else if (window.innerWidth < 880 && window.innerWidth >= 575) {
-      // Cas pour les écrans petits// Ajuste la largeur avec la marge droite
-      divs.forEach((div) => {
-        div.style.width = "353.5px"; // Largeur définie pour ce cas
-      });
-    } else if (window.innerWidth < 575) {
-      divs.forEach((div) => {
-        div.style.width = "171.667px"; // Largeur définie pour ce cas
-      })
-    }
-    
-    
-    
+  let tailleConteneur = 0;
+  let personWidth = 0;
+
+  if (window.innerWidth >= 992) {
+    // Cas pour les écrans larges
+    tailleConteneur = window.innerWidth - 180;
+    personWidth = persons[0].offsetWidth + 60; // Ajuste la largeur avec la marge droite
+    divs.forEach((div) => {
+      div.style.width = "233.333px"; // Largeur définie pour ce cas
+    });
+  } else if (window.innerWidth >= 880) {
+    // Cas pour les écrans moyens // Ajuste la largeur avec la marge droite
+    divs.forEach((div) => {
+      div.style.width = "253.333px"; // Largeur définie pour ce cas
+    });
+  } else if (window.innerWidth < 880 && window.innerWidth >= 575) {
+    // Cas pour les écrans petits// Ajuste la largeur avec la marge droite
+    divs.forEach((div) => {
+      div.style.width = "353.5px"; // Largeur définie pour ce cas
+    });
+  } else if (window.innerWidth < 575) {
+    divs.forEach((div) => {
+      div.style.width = "171.667px"; // Largeur définie pour ce cas
+    })
   }
-  
-  // Appeler la fonction une première fois pour l'initialiser
-  adjustDivWidths();
-  
-  // Ajout d'un écouteur d'événement pour surveiller le redimensionnement de la fenêtre
-  window.addEventListener('resize', adjustDivWidths);
+
+
+
+}
+
+// Appeler la fonction une première fois pour l'initialiser
+adjustDivWidths();
+
+// Ajout d'un écouteur d'événement pour surveiller le redimensionnement de la fenêtre
+window.addEventListener('resize', adjustDivWidths);
 
 // Fonction pour faire défiler horizontalement
 function scrollToActivePerson() {
   // Calcul de la position à scroller en fonction de la largeur de la personne
-  const personWidth = persons[currentIndex].offsetWidth;
+  const personWidth = persons[currentIndex].offsetWidth + 45;
   const scrollPosition = personWidth * currentIndex - (customerPersons.offsetWidth / 2 - personWidth / 2);
   customerPersons.scrollTo({ left: scrollPosition, behavior: "smooth" });
 }
@@ -226,7 +226,7 @@ function nextPerson() {
 
 // Démarrer le défilement automatique
 function startAutoScroll() {
-  autoScrollInterval = setInterval(nextPerson, 5000); // 5 secondes d'intervalle
+  autoScrollInterval = setInterval(nextPerson, 1000); // 10 secondes d'intervalle
 }
 
 // Arrêter le défilement automatique
