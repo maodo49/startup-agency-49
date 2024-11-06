@@ -226,7 +226,7 @@ function nextPerson() {
 
 // Démarrer le défilement automatique
 function startAutoScroll() {
-  autoScrollInterval = setInterval(nextPerson, 1000); // 10 secondes d'intervalle
+  autoScrollInterval = setInterval(nextPerson, 10000); // 10 secondes d'intervalle
 }
 
 // Arrêter le défilement automatique
