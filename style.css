@@ -693,6 +693,7 @@ section div.container{
 
 /* Modal content */
 .modal-content {
+    /* display: none; */
     position: relative;
     background-color: transparent;
     margin: auto;
@@ -705,10 +706,10 @@ section div.container{
 /* Close button */
 .close {
     position: absolute;
-    z-index: 2;
+    z-index: 4;
     top: -45px;
     right: -45px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     width: 40px;
     height: 40px;
     font-size: 50px;
@@ -717,7 +718,7 @@ section div.container{
 
 .close:hover,
 .close:focus {
-    color: #000;
+    color: #282828;
     text-decoration: none;
     cursor: pointer;
 }
@@ -1037,7 +1038,9 @@ div.person.person5 {
     padding: 0;
     width: 380.667px;
     /* margin-right: 35px; */
-        border: 0.1px solid #837d7d;
+    border: 0.05px solid #837d7d1b;
+    box-sizing: border-box;
+    border-radius: 6px;
 }
 
 .tutorial3 {

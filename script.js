@@ -108,37 +108,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 //Création du modal pour la video
+// let modal = document.getElementById("videoModal");
+// let btn = document.getElementById("openModal");
+// let span = document.getElementsByClassName("close")[0];
+// let iframe = document.getElementById("youtubeVideo");
+
+// // YouTube video URL (avec l'option autoplay:1 pour que la video soit auto-démarre)
+// let videoSrc = "https://www.youtube.com/embed/Cm3U-NgJb9I?autoplay=1&si=ipQff0oORqsnfIpp";
 
 
-let modal = document.getElementById("videoModal");
-let btn = document.getElementById("openModal");
-let span = document.getElementsByClassName("close")[0];
-let iframe = document.getElementById("youtubeVideo");
+// //Quand on clique sur le bouton, on ouvre le modal et la vidéo démarre
+// btn.onclick = function () {
+//   modal.style.display = "flex";
+//   iframe.src = videoSrc; // Set the video source to autoplay
+// };
 
-// YouTube video URL (avec l'option autoplay:1 pour que la video soit auto-démarre)
-let videoSrc = "https://www.youtube.com/embed/Cm3U-NgJb9I?autoplay=1&si=ipQff0oORqsnfIpp";
-
-
-//Quand on clique sur le bouton, on ouvre le modal et la vidéo démarre
-btn.onclick = function () {
-  modal.style.display = "flex";
-  iframe.src = videoSrc; // Set the video source to autoplay
-};
-
-//Quand on clique sur la croix, on ferme le modal
-span.onclick = function () {
-  modal.style.display = "none";
-  iframe.src = ""; // Stop la video par le reset de la source
-};
+// //Quand on clique sur la croix, on ferme le modal
+// span.onclick = function () {
+//   modal.style.display = "none";
+//   iframe.src = ""; // Stop la video par le reset de la source
+// };
 
 
-//Quand on clique en dehors de la modal, on la ferme
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-    iframe.src = ""; // Stop la video par le reset de la source
-  }
-};
+// //Quand on clique en dehors de la modal, on la ferme
+// window.onclick = function (event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//     iframe.src = ""; // Stop la video par le reset de la source
+//   }
+// };
+const openModal = document.getElementById('openModal');
+const modalContent = document.querySelector('.modal-content');
+const closeBtn = document.querySelector('.close');
+const svgIcon = document.querySelector('#openModal');
+
+openModal.addEventListener('click', () => {
+  // Hide SVG icon and display the video modal content
+  svgIcon.style.display = 'none';
+  modalContent.style.display = 'flex';
+});
+
+closeBtn.addEventListener('click', () => {
+  // Hide the video modal content and show SVG icon again
+  modalContent.style.display = 'none';
+  svgIcon.style.display = 'flex';
+});
 
 //Section des commentaires avec paragraphes de style "Playfair Display"
 
