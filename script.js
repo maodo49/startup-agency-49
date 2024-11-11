@@ -141,17 +141,19 @@ const openModal = document.getElementById('openModal');
 const modalContent = document.querySelector('.modal-content');
 const closeBtn = document.querySelector('.close');
 const svgIcon = document.querySelector('#openModal');
-
+let iframe = document.getElementById("youtubeVideo");
 openModal.addEventListener('click', () => {
   // Hide SVG icon and display the video modal content
   svgIcon.style.display = 'none';
   modalContent.style.display = 'flex';
+  iframe.src = "https://www.youtube.com/embed/Cm3U-NgJb9I?autoplay=1&si=ipQff0oORqsnfIpp";
 });
 
 closeBtn.addEventListener('click', () => {
   // Hide the video modal content and show SVG icon again
   modalContent.style.display = 'none';
   svgIcon.style.display = 'flex';
+  iframe.src = " "
 });
 
 //Section des commentaires avec paragraphes de style "Playfair Display"
